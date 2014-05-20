@@ -34,27 +34,27 @@ class net:
 	    import MPIWrapper
 	    __MPIEnabled = True
 	    self.comm = MPI.COMM_WORLD()
-      self.rank = comm.Get_rank()
-      self.size = comm.Get_size()
-      wrap = MPIWrapper.wrap(comm, rank, size) #may not be needed, just being careful with scope
+	    self.rank = comm.Get_rank()
+	    self.size = comm.Get_size()
+	    wrap = MPIWrapper.wrap(comm, rank, size) #may not be needed, just being careful with scope
 	  except: ###########################################
 	    ###################################################
-		try:
-		  import multiprocessing
-		  temp = multiprocessing.cpu_count()
-		  if(temp > 1):
-		    __multiProcessEnabled = True
-		    __processCount = temp
-		    import multiPer as per
-		    import MPlayer as lay
-		    import MPneuron as neu
-		  else:
-		    import singlePer as per
-		    import layer as lay
-		    import neuron as neu
-		except NotImplementedError:
-		  __multiProcessEnabled = False
-		  import singlePer as per
+	  try:
+	    import multiprocessing
+	    temp = multiprocessing.cpu_count()
+	    if(temp > 1):
+	      __multiProcessEnabled = True
+	      __processCount = temp
+	      import multiPer as per
+	      import MPlayer as lay
+	      import MPneuron as neu
+	    else:
+	      import singlePer as per
+	      import layer as lay
+	      import neuron as neu
+	  except NotImplementedError:
+	    __multiProcessEnabled = False
+	    import singlePer as per
 		  
 		neuron = neu.neuron_gen()
 		layer = lay.layer_gen(neuron)
