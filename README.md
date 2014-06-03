@@ -1,7 +1,5 @@
-Perennial - An AI Module for Python
+Dj Tagger
 ===================================
-A module designed to implement multiple forms of parallelism for multiple forms of AI
+This is a script that is a branch of Perrenial focused on providing tagging services for a variety of Djing programs
 -------------------------------------------------------------------------------------
-This is a module for Python designed to offer multiple forms of AI (currently only neural networks) allowing for speedup using multiple forms of parallelism at the user's discretion. The goal of this module is to be fully optimized for Raspberry Pi Beowulf Clusters. Currently, support for MPI and multi-processing are currently being implemented, with stackless and gpu implementation soon coming. The current network used is a feed-forward neural network with back-propogation. Other neural networks will soon be added, and support for other AI constructs is a stretch goal. 
-
-A very far stretch goal would be for this project to eventually turn into a programming language that fully supports parallelism and concurrency as a core language trait.
+This script will tag audio metadata with a variety of helpful presets to be used with programs such as Serato and Traktor. Utilizing seperate neural networks trained for the tag, this script will (eventually) auto-tag the BPM and que points based on a variety of options offered to the User.
